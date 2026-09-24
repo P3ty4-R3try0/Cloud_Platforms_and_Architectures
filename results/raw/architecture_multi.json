@@ -1,0 +1,117 @@
+{
+  "config": "multi",
+  "startup_time_s": 1.004824161529541,
+  "image_size_mb": 197.8459930419922,
+  "resources": {
+    "movie-app-multi": {
+      "cpu_percent": 0.6266666666666667,
+      "mem_mb": 56.093333333333334
+    },
+    "movie-redis": {
+      "cpu_percent": 0.19333333333333336,
+      "mem_mb": 9.852666666666666
+    }
+  },
+  "load_test": {
+    "requests": 18111,
+    "errors": 0,
+    "wall_time_s": 15.014825979989837,
+    "throughput_rps": 1206.2077858335763,
+    "mean_ms": 16.557706982072045,
+    "p50_ms": 11.490120014059357,
+    "p95_ms": 45.46084899629932,
+    "p99_ms": 53.46093799744267,
+    "per_second": [
+      {
+        "second": 0,
+        "total": 1264,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 1,
+        "total": 1274,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 2,
+        "total": 1160,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 3,
+        "total": 1044,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 4,
+        "total": 1278,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 5,
+        "total": 1339,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 6,
+        "total": 1219,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 7,
+        "total": 1341,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 8,
+        "total": 1115,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 9,
+        "total": 1212,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 10,
+        "total": 1186,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 11,
+        "total": 1185,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 12,
+        "total": 1245,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 13,
+        "total": 1075,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 14,
+        "total": 1174,
+        "errors": 0,
+        "error_rate": 0.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+report/node_modules/
+report/package-lock.json

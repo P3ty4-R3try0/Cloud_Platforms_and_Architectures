@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movie API — Usage Guide</title>
+<style>
+  :root {
+    --ink: #0b0b0b;
+    --ink-2: #52514e;
+    --muted: #898781;
+    --surface: #fcfcfb;
+    --page: #f9f9f7;
+    --border: #e1e0d9;
+    --blue: #2a78d6;
+    --orange: #eb6834;
+    --aqua: #1baf7a;
+    --code-bg: #f0efec;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+  h1 { font-size: 1.7rem; margin-bottom: 4px; }
+  .subtitle { color: var(--ink-2); margin-top: 0; margin-bottom: 28px; }
+  h2 {
+    font-size: 1.1rem;
+    margin-top: 40px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .method {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: #fff;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .get { background: var(--blue); }
+  .post { background: var(--orange); }
+  .path {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.95rem;
+    vertical-align: middle;
+  }
+  .desc { color: var(--ink-2); margin: 10px 0; }
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 6px 10px 6px 0; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; }
+  .tag {
+    display: inline-block;
+    background: var(--code-bg);
+    border-radius: 5px;
+    padding: 1px 7px;
+    font-size: 0.78rem;
+    color: var(--ink-2);
+  }
+  .note {
+    border-left: 3px solid var(--aqua);
+    background: var(--surface);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    color: var(--ink-2);
+    font-size: 0.92rem;
+  }
+  footer { margin-top: 50px; color: var(--muted); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Movie API</h1>
+  <p class="subtitle">A small REST API over the real MovieLens dataset (9,742 movies, 100,836 ratings), backed by Redis. Built as the demo app for a Docker containerization &amp; orchestration comparison.</p>
+
+  <div class="note">
+    Every response includes <code>served_by</code> or a <code>host</code> field with the container's hostname —
+    useful when this app is running scaled to several replicas (Compose 3x or Swarm), to see requests
+    being spread across different backend containers.
+  </div>
+
+  <h2>Endpoints</h2>
+
+  <div class="card">
+    <span class="method get">GET</span><span class="path">/health</span>
+    <p class="desc">Liveness/readiness check. Returns 200 if the app can reach Redis, 503 otherwise. Used by container health checks and by the orchestrator to know when a replica is ready to receive traffic.</p>
+    <pre>curl http://localhost:8000/health
+
+{"status": "ok", "host": "a1b2c3d4e5f6"}</pre>
+  </div>
+
+  <div class="card">
+    <span class="method get">GET</span><span class="path">/stats</span>
+    <p class="desc">Basic dataset stats — how many movies are loaded.</p>
+    <pre>curl http://localhost:8000/stats
+
+{"movies_loaded": 9742, "host": "a1b2c3d4e5f6"}</pre>
+  </div>
+
+  <div class="card">
+    <span class="method get">GET</span><span class="path">/movies/search</span>
+    <p class="desc">Case-insensitive substring search over movie titles.</p>
+    <table>
+      <tr><th>Query param</th><th>Type</th><th>Default</th><th>Notes</th></tr>
+      <tr><td><code>q</code></td><td>string</td><td>required</td><td>substring to match against the title</td></tr>
+      <tr><td><code>limit</code></td><td>int</td><td>20</td><td>capped at 100</td></tr>
+    </table>
+    <pre>curl "http://localhost:8000/movies/search?q=toy&limit=5"
+
+{
+  "results": [
+    {"movie_id": "1", "title": "Toy Story (1995)"},
+    {"movie_id": "3114", "title": "Toy Story 2 (1999)"},
+    {"movie_id": "78499", "title": "Toy Story 3 (2010)"}
+  ],
+  "count": 3
+}</pre>
+  </div>
+
+  <div class="card">
+    <span class="method get">GET</span><span class="path">/movies/&lt;movie_id&gt;</span>
+    <p class="desc">Fetch a single movie's metadata and running average rating.</p>
+    <pre>curl http://localhost:8000/movies/1
+
+{
+  "movie_id": "1",
+  "title": "Toy Story (1995)",
+  "genres": ["Adventure", "Animation", "Children", "Comedy", "Fantasy"],
+  "avg_rating": 3.92,
+  "num_ratings": 215,
+  "served_by": "a1b2c3d4e5f6"
+}</pre>
+    <p class="desc"><span class="tag">404</span> if the movie id doesn't exist.</p>
+  </div>
+
+  <div class="card">
+    <span class="method post">POST</span><span class="path">/movies/&lt;movie_id&gt;/rate</span>
+    <p class="desc">Submit a new rating. The stored average is updated with a read-modify-write (an atomic Redis Lua script), and the new count/average are returned.</p>
+    <table>
+      <tr><th>Body field</th><th>Type</th><th>Constraint</th></tr>
+      <tr><td><code>rating</code></td><td>float</td><td>0.5 – 5.0</td></tr>
+    </table>
+    <pre>curl -X POST http://localhost:8000/movies/1/rate \
+  -H "Content-Type: application/json" \
+  -d '{"rating": 4.5}'
+
+{"movie_id": "1", "num_ratings": 216, "avg_rating": 3.9227}</pre>
+    <p class="desc"><span class="tag">400</span> if <code>rating</code> is missing or out of range · <span class="tag">404</span> if the movie id doesn't exist.</p>
+  </div>
+
+  <h2>Trying it end to end</h2>
+  <pre># 1. find a movie
+curl "http://localhost:8000/movies/search?q=matrix"
+
+# 2. look at it
+curl http://localhost:8000/movies/2571
+
+# 3. rate it
+curl -X POST http://localhost:8000/movies/2571/rate \
+  -H "Content-Type: application/json" -d '{"rating": 5}'
+
+# 4. confirm the average moved
+curl http://localhost:8000/movies/2571</pre>
+
+  <footer>Data: MovieLens "latest-small" (GroupLens Research) · Storage: Redis · Served by Flask/Gunicorn in a container.</footer>
+</div>
+</body>
+</html>

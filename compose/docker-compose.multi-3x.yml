@@ -1,0 +1,50 @@
+services:
+  redis:
+    image: redis:7
+    container_name: movie-redis-3x
+    restart: unless-stopped
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    mem_limit: 256m
+
+  app1:
+    build:
+      context: ..
+      dockerfile: Dockerfile.app
+    image: movie-app:multi
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+    restart: unless-stopped
+    mem_limit: 256m
+
+  app2:
+    image: movie-app:multi
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+    restart: unless-stopped
+    mem_limit: 256m
+
+  app3:
+    image: movie-app:multi
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+    restart: unless-stopped
+    mem_limit: 256m
+
+  nginx:
+    image: nginx:1.27
+    container_name: movie-nginx-3x
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8000:80"
+    depends_on:
+      - app1
+      - app2
+      - app3
+    restart: unless-stopped

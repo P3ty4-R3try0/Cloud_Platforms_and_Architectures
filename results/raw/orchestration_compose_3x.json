@@ -1,0 +1,128 @@
+{
+  "config": "compose_3x",
+  "startup_time_s": 0.6340115070343018,
+  "resources": {
+    "compose-app1-1": {
+      "cpu_percent": 2.8833333333333333,
+      "mem_mb": 53.196666666666665
+    },
+    "compose-app2-1": {
+      "cpu_percent": 0.01,
+      "mem_mb": 53.42333333333334
+    },
+    "compose-app3-1": {
+      "cpu_percent": 3.0766666666666667,
+      "mem_mb": 53.20000000000001
+    },
+    "movie-nginx-3x": {
+      "cpu_percent": 0.0,
+      "mem_mb": 2.185333333333334
+    },
+    "movie-redis-3x": {
+      "cpu_percent": 0.22666666666666666,
+      "mem_mb": 10.038333333333332
+    }
+  },
+  "load_test": {
+    "requests": 21608,
+    "errors": 0,
+    "wall_time_s": 15.02050104799855,
+    "throughput_rps": 1438.5671909978807,
+    "mean_ms": 20.80910175441017,
+    "p50_ms": 19.094623989076354,
+    "p95_ms": 36.9481070083566,
+    "p99_ms": 58.25828100205399,
+    "per_second": [
+      {
+        "second": 0,
+        "total": 1660,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 1,
+        "total": 1441,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 2,
+        "total": 1318,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 3,
+        "total": 1186,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 4,
+        "total": 1538,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 5,
+        "total": 1418,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 6,
+        "total": 1646,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 7,
+        "total": 1505,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 8,
+        "total": 1265,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 9,
+        "total": 1469,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 10,
+        "total": 1665,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 11,
+        "total": 1506,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 12,
+        "total": 1413,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 13,
+        "total": 1237,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 14,
+        "total": 1341,
+        "errors": 0,
+        "error_rate": 0.0
+      }
+    ]
+  }
+}

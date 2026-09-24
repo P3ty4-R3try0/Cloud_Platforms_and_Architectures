@@ -1,0 +1,187 @@
+{
+  "requests": 6273,
+  "errors": 511,
+  "wall_time_s": 41.25604986099643,
+  "throughput_rps": 152.0504270558028,
+  "mean_ms": 98.51512796080422,
+  "p50_ms": 8.309409997309558,
+  "p95_ms": 1500.9143209899776,
+  "p99_ms": 1510.7493649993557,
+  "per_second": [
+    {
+      "second": 0,
+      "total": 1218,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 1,
+      "total": 1220,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 2,
+      "total": 1212,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 3,
+      "total": 1007,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 4,
+      "total": 1076,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 5,
+      "total": 195,
+      "errors": 166,
+      "error_rate": 0.8512820512820513
+    },
+    {
+      "second": 6,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 8,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 9,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 11,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 12,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 14,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 15,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 17,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 18,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 20,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 21,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 23,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 24,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 26,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 27,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 29,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 30,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 32,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 33,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 35,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 36,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 38,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    },
+    {
+      "second": 39,
+      "total": 15,
+      "errors": 15,
+      "error_rate": 1.0
+    }
+  ],
+  "recovery_time_s": null
+}

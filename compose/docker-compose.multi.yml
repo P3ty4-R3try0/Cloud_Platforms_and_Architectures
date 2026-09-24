@@ -1,0 +1,23 @@
+services:
+  redis:
+    image: redis:7
+    container_name: movie-redis
+    restart: unless-stopped
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    mem_limit: 256m
+
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile.app
+    image: movie-app:multi
+    container_name: movie-app-multi
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    mem_limit: 256m
+    cpus: 1.0

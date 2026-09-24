@@ -1,0 +1,133 @@
+{
+  "requests": 29773,
+  "errors": 5,
+  "wall_time_s": 20.012182901002234,
+  "throughput_rps": 1487.7437482599128,
+  "mean_ms": 20.121434380050967,
+  "p50_ms": 19.239387998823076,
+  "p95_ms": 32.941861005383544,
+  "p99_ms": 42.16483900381718,
+  "per_second": [
+    {
+      "second": 0,
+      "total": 1575,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 1,
+      "total": 1396,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 2,
+      "total": 1608,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 3,
+      "total": 1559,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 4,
+      "total": 1456,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 5,
+      "total": 1312,
+      "errors": 5,
+      "error_rate": 0.0038109756097560975
+    },
+    {
+      "second": 6,
+      "total": 1484,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 7,
+      "total": 1410,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 8,
+      "total": 1438,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 9,
+      "total": 1620,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 10,
+      "total": 1604,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 11,
+      "total": 1529,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 12,
+      "total": 1377,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 13,
+      "total": 1589,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 14,
+      "total": 1552,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 15,
+      "total": 1497,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 16,
+      "total": 1443,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 17,
+      "total": 1311,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 18,
+      "total": 1462,
+      "errors": 0,
+      "error_rate": 0.0
+    },
+    {
+      "second": 19,
+      "total": 1551,
+      "errors": 0,
+      "error_rate": 0.0
+    }
+  ],
+  "recovery_time_s": 0.0712435245513916
+}

@@ -1,0 +1,119 @@
+{
+  "config": "swarm_3x",
+  "resources": {
+    "moviestack_app.3.sb3nz20w2l866xadu4ecel0cv": {
+      "cpu_percent": 2.3833333333333333,
+      "mem_mb": 53.723333333333336
+    },
+    "moviestack_app.2.c6fybsmhts787worek853rpe6": {
+      "cpu_percent": 2.36,
+      "mem_mb": 53.61333333333334
+    },
+    "moviestack_app.1.i5luum50al07jrb3pcwl3rvev": {
+      "cpu_percent": 2.3833333333333333,
+      "mem_mb": 53.97666666666667
+    }
+  },
+  "load_test": {
+    "requests": 24035,
+    "errors": 0,
+    "wall_time_s": 15.012759354009177,
+    "throughput_rps": 1600.9715091837147,
+    "mean_ms": 18.698222932915993,
+    "p50_ms": 16.14499899733346,
+    "p95_ms": 38.8948300096672,
+    "p99_ms": 60.19991799257696,
+    "per_second": [
+      {
+        "second": 0,
+        "total": 758,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 1,
+        "total": 701,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 2,
+        "total": 1490,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 3,
+        "total": 1954,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 4,
+        "total": 1453,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 5,
+        "total": 1998,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 6,
+        "total": 2055,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 7,
+        "total": 1865,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 8,
+        "total": 1744,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 9,
+        "total": 1673,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 10,
+        "total": 1949,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 11,
+        "total": 1767,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 12,
+        "total": 1358,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 13,
+        "total": 1880,
+        "errors": 0,
+        "error_rate": 0.0
+      },
+      {
+        "second": 14,
+        "total": 1390,
+        "errors": 0,
+        "error_rate": 0.0
+      }
+    ]
+  }
+}
